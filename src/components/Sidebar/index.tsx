@@ -16,6 +16,7 @@ import {
   DollarSign,
   Warehouse,
   FileText,
+  PackageSearch 
 } from "lucide-react";
 
 interface SidebarProps {
@@ -42,6 +43,11 @@ const menuGroups = [
         icon: <Package className="h-5 w-5" />,
         label: "All Orders",
         route: "/order/all-orders",
+      },
+      {
+        icon: <PackageSearch  className="h-5 w-5" />,
+        label: "All Products",
+        route: "/products",
       },
     ],
   },

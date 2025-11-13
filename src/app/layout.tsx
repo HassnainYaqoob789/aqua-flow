@@ -3,7 +3,13 @@ import "flatpickr/dist/flatpickr.min.css";
 import "@/css/satoshi.css";
 import "@/css/style.css";
 
-import ClientWrapper from "@/components/ClientWrapper"; 
+import ClientProvider from "@/components/ClientProvider";
+import ClientWrapper from "@/components/ClientWrapper";
+
+export const metadata = {
+  title: "Your App",
+  description: "Next.js + React Query setup",
+};
 
 export default function RootLayout({
   children,
@@ -11,10 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
-        {/* Wrap client logic and React Query provider */}
-        <ClientWrapper>
-            {children}
-        </ClientWrapper>
+        <ClientProvider>
+          <ClientWrapper>{children}</ClientWrapper>
+        </ClientProvider>
       </body>
     </html>
   );
